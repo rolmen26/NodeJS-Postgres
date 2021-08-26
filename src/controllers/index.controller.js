@@ -11,7 +11,7 @@ const pool = new Pool({
 
 const crearCliente = async (req, res) => {
     const { cedula, nombre, apellido } = req.body;
-    const response = await pool.query('INSERT INTO cliente (Cedula, Nombre, Apellido) VALUES ($1, $2, $3)', [cedula, nombre, apellido]);
+    const response = await pool.query('INSERT INTO cliente (cedula, nombre, apellido) VALUES ($1, $2, $3)', [cedula, nombre, apellido]);
     res.json({
         message: 'Cliente creado',
         body: {
